@@ -1,0 +1,15 @@
+@inherits LayoutComponentBase
+
+<div class="d-flex flex-column min-vh-100">
+    <NavMenu />
+    
+    <main class="flex-fill d-flex flex-column">
+        @Body
+    </main>
+    
+    <footer class="bg-light border-top py-3 mt-auto">
+        <div class="container-fluid text-center text-muted">
+            <small>&copy; @DateTime.Now.Year Demo Chat LLM</small>
+        </div>
+    </footer>
+</div>

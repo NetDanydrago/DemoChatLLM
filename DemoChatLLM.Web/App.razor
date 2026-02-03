@@ -1,0 +1,24 @@
+@using Microsoft.AspNetCore.Components.Routing
+@using DemoChatLLM.Web.Shared
+
+<Router AppAssembly="@typeof(App).Assembly" 
+        AdditionalAssemblies="new[] { typeof(Chat.Views.Pages.ChatPage).Assembly }">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>No encontrado</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <div class="container mt-5">
+                <div class="text-center">
+                    <h1 class="display-1 text-muted">404</h1>
+                    <p class="lead">Lo sentimos, no hay nada en esta dirección.</p>
+                    <a href="" class="btn btn-primary">
+                        <i class="bi bi-house-fill me-2"></i>Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </LayoutView>
+    </NotFound>
+</Router>
